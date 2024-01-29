@@ -1,0 +1,62 @@
+<div>
+  <div class="header-title">
+      <p *ngIf="selectedStudent; else elseBlock"><strong>Alumnos</strong> / Editar alumno</p>
+      <ng-template #elseBlock>
+        <p><strong>Alumnos</strong> / Nuevo alumno</p>
+      </ng-template>
+      
+      <h3>Alumnos</h3>
+  </div>
+
+  <div class="container form-div">
+    
+    <form [formGroup]="studentForm" (ngSubmit)="submit()">
+        <input type="hidden" id="student-id" formControlName="id" value="{{selectedStudent?.id}}">
+        <div class="mb-3">
+          <label for="student-name" class="col-form-label">Nombre:</label>
+          <input type="text" class="form-control" id="student-name" formControlName="nombre" value="{{selectedStudent?.nombre}}">
+        </div>
+        <div class="mb-3">
+            <label for="student-surname" class="col-form-label">Apellido:</label>
+            <input type="text" class="form-control" id="student-surname" formControlName="apellido" value="{{selectedStudent?.apellido}}">
+        </div>
+        <div class="mb-3">
+          <label for="student-age" class="col-form-label">Edad:</label>
+          <input type="number" class="form-control" id="student-age" formControlName="edad" value="{{selectedStudent?.edad}}">
+        </div>
+        <div class="mb-3">
+          <label for="student-phone" class="col-form-label">Teléfono:</label>
+          <input type="text" class="form-control" id="student-phone" formControlName="telefono" value="{{selectedStudent?.telefono}}">
+        </div>
+        <div class="mb-3">
+            <label for="student-email" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="student-email" formControlName="correo" value="{{selectedStudent?.correo}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-check-label">Materias:</label>
+            <div *ngFor="let subject of subjects" class="form-check" >
+                <input formArrayName="materias" class="form-check-input" type="checkbox" value={{subject.id}} [id]="'subject' + subject.id">
+                <label class="form-check-label" [for]="'subject' + subject.id">
+                  {{subject.nombre}}
+                </label>
+            </div>
+        </div>
+
+
+
+      <div class="row">
+        <div class="col">
+          <a href="http://localhost:4200/students" class="btn btn-danger">Regresar</a>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success actnBtn">Guardar</button>
+        </div>
+      </div>
+
+  </form>
+  </div>
+
+</div>
+
+
+

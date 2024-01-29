@@ -1,0 +1,51 @@
+<div>
+    <div class="header-title">
+        <p><strong>Materias</strong>
+        <h3>Materias</h3>
+        
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="subjectId" class="col-form-label">Busqueda: </label>
+            </div>
+            <div class="col-auto">
+                <input #subjectId type="number" class="form-control" placeholder="Busqueda por id">
+            </div>
+            <div class="col-auto">
+                <button (click)="searchById(subjectId.value)" class="btn btn-primary">Buscar</button>
+            </div>
+            <div class="col-auto">
+                <button (click)="findAll()" class="btn btn-secondary">Mostrar todas</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="div-table">
+        <table class="table table-dark table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Creditos</th>
+                    <th><a [routerLink]="['new-subject']" id="newStBtn" class="btn btn-success">Nuevo</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subject of subjects">
+                    <td>{{subject.id}}</td>
+                    <td>{{subject.nombre}}</td>
+                    <td>{{subject.creditos}}</td>
+                    <td>
+                        <a [routerLink]="['edit-subject', subject.id]" class="btn btn-warning actnBtn">Editar</a><br>
+                        <button (click)="deleteSubject(subject.id)" value={{subject.id}} class="btn btn-danger actnBtn">Eliminar</button><br>
+                    </td>
+                </tr>
+            </tbody>
+        
+        </table>
+    </div>
+
+
+

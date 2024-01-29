@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-div {
+    margin-top: 50px;
+}
+
+.header-title {
+    margin-top: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    display: block;
+    background-color: antiquewhite;
+}
+
+.header-title p {
+    color: gray;
+}
+
+.div-table {
+    margin-top: 20px;
+}
+
+#newStBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.actnBtn {
+    display: block;
+    margin-top: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+
+.srch-div{
+    color: white;
+    margin-top: 2px;
+    padding-bottom: 15px;
+    background-color: gray;
+}
+
+.form-div{
+    color: white;
+    margin-top: 10px;
+    background-color: rgb(92, 107, 107);
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.btn-submit-right{
+    margin-left: auto;
+    margin-right: auto;
+}

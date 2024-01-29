@@ -1,0 +1,40 @@
+
+
+  <div>
+    <div class="header-title">
+        <p *ngIf="selectedSubject; else elseBlock"><strong>Materias</strong> / Editar materia</p>
+        <ng-template #elseBlock>
+          <p><strong>Materias</strong> / Nueva materia</p>
+        </ng-template>
+        
+        <h3>Materias</h3>
+    </div>
+  
+    <div class="container form-div">
+      
+      <form [formGroup]="subjectForm" (ngSubmit)="submit()">
+          <input type="hidden" id="subject-id" formControlName="id" value="{{selectedSubject?.id}}">
+          <div class="mb-3">
+            <label for="subject-name" class="col-form-label">Nombre:</label>
+            <input type="text" class="form-control" id="subject-name" formControlName="nombre" value="{{selectedSubject?.nombre}}">
+          </div>
+          <div class="mb-3">
+              <label for="subject-creditos" class="col-form-label">Creditos:</label>
+              <input type="number" class="form-control" id="subject-credits" formControlName="creditos" value="{{selectedSubject?.creditos}}">
+          </div>
+
+  
+        <div class="row">
+          <div class="col">
+            <a [routerLink]="['/subjects']" class="btn btn-danger">Regresar</a>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-success actnBtn">Guardar</button>
+          </div>
+        </div>
+  
+    </form>
+    </div>
+  
+  </div>
+
